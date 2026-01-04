@@ -51,7 +51,7 @@ pub struct Writer {
     buffer: &'static mut Buffer,
 }
 
-lazy_static::lazy_static!{
+lazy_static::lazy_static! {
     pub static ref WRITER: spin::Mutex<Writer> = spin::Mutex::new(Writer {
         column_position: 0,
         color_code: ColorCode::new(Color::Yellow, Color::Black),
@@ -64,7 +64,7 @@ impl Writer {
         for byte in s.bytes() {
             match byte {
                 0x20..=0x7e | b'\n' => self.write_byte(byte),
-                _ => self.write_byte(0xfe)
+                _ => self.write_byte(0xfe),
             }
         }
     }
