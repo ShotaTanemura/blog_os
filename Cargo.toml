@@ -27,3 +27,7 @@ test-timeout = 300
 name = "blog_os"
 test = true
 bench = false
+
+[[test]]
+name = "should_panic"
+harness = false
