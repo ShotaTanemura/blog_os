@@ -4,8 +4,8 @@
 #![test_runner(blog_os::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
-use core::panic::PanicInfo;
 use blog_os::println;
+use core::panic::PanicInfo;
 
 #[test_case]
 fn test_println() {
@@ -13,10 +13,10 @@ fn test_println() {
 }
 
 #[unsafe(no_mangle)]
-pub extern  "C" fn _start() -> ! {
+pub extern "C" fn _start() -> ! {
     test_main();
 
-    loop {}   
+    loop {}
 }
 
 #[panic_handler]
